@@ -7,14 +7,13 @@ const products = [
 ];
 
 function getAllPropValues(arr, prop) {
-  const newArray = [];
-  for (const item of arr) {
-    let newArrayItem = item[prop];
-    if (newArrayItem != undefined) {
-      newArray.push(newArrayItem);
+  const result = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (Object.keys(products[i]).includes(prop)) {
+      result.push(arr[i][prop]);
     }
   }
-  return newArray;
+  return result;
 }
 
 /*
